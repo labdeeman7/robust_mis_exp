@@ -37,7 +37,8 @@ def density(values: list[float], ys: list[float], bandwidth: float = 0.055) -> l
 def panel(groups: dict[str, list[float]], title: str, x0: int, y0: int, width: int, height: int) -> list[str]:
     left, right, top, bottom = 66, 24, 42, 128
     plot_w, plot_h = width - left - right, height - top - bottom
-    sx = plot_w / len(ORDER)
+    active = [strategy for strategy in ORDER if groups.get(strategy)]
+    sx = plot_w / len(active)
     py = lambda value: y0 + top + (1 - value) * plot_h
     pieces = [f'<text x="{x0 + width/2}" y="{y0 + 22}" text-anchor="middle" class="title">{title}</text>',
               f'<line x1="{x0+left}" y1="{py(0)}" x2="{x0+left+plot_w}" y2="{py(0)}" class="axis"/>',
@@ -47,7 +48,7 @@ def panel(groups: dict[str, list[float]], title: str, x0: int, y0: int, width: i
         pieces += [f'<line x1="{x0+left}" y1="{y}" x2="{x0+left+plot_w}" y2="{y}" class="grid"/>',
                    f'<text x="{x0+left-8}" y="{y+4}" text-anchor="end" class="tick">{tick:.2g}</text>']
     ys = [i / 100 for i in range(101)]
-    for index, strategy in enumerate(ORDER):
+    for index, strategy in enumerate(active):
         values = groups.get(strategy, [])
         if not values:
             continue

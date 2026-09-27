@@ -138,7 +138,7 @@ Deliverable: a recorded prompt-selection decision and frozen full-run configurat
 
 C7 outcome: carry P1 and P2 into the full run. P1 is the minimal visible-keypoint baseline; P2 is the strongest overall pilot policy and densifies only fully visible, in-bounds skeleton edges. Retaining both quantifies whether densification helps at scale without introducing boxes or competitor-dependent negatives.
 
-### C8 — Run P1 and P2 on full Buckets A, B, and C 🚧 Running on DGX
+### C8 — Run P1 and P2 on full Buckets A, B, and C ✅ Complete (2026-09-27)
 
 Run the selected frozen prompt policy over every eligible, explicitly matched instrument instance:
 
@@ -149,6 +149,8 @@ Run the selected frozen prompt policy over every eligible, explicitly matched in
 The full run must retain the same visibility rule: only explicitly `visible`, in-bounds points may be normal SAM prompts. Report per-instance IoU, IoU < 0.20 failure counts/rates, and the agreed success summaries overall and separately for A, B, and C. Keep all failures and empty predictions. Do not tune the prompt policy after inspecting full-run results.
 
 Deliverable: the main full-dataset feasibility result answering how often pose prompts recover the correct instrument instance.
+
+C8 outcome: all 7,348 frames, 10,525 instruments, and 21,050 P1/P2 evaluations completed successfully. P2 was strongest overall: mean IoU 0.6855, median 0.8434, 15.9% below IoU 0.20, 69.4% at IoU >= 0.70, and 59.2% at IoU >= 0.80. P1 achieved mean IoU 0.6266 with 26.5% below 0.20. P2 reduced the failure count by 1,122 instances, although P1 produced slightly more IoU >= 0.90 masks and achieved one additional IoU >= 0.70 success among the 12 Bucket C instances.
 
 ## Optional future paper phase
 

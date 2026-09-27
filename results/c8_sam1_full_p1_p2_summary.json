@@ -1,0 +1,114 @@
+{
+  "strategy:p1_visible_points:bucket_a": {
+    "count": 9178,
+    "mean_iou": 0.6377473040270212,
+    "median_iou": 0.8483983749999999,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 2356,
+    "failure_rate_below_0.20": 0.2567008062758771,
+    "success_rates": {
+      "iou_at_least_0.50": 0.7050555676618,
+      "iou_at_least_0.70": 0.6574417084332098,
+      "iou_at_least_0.80": 0.5848768794944432,
+      "iou_at_least_0.90": 0.3069296142950534
+    }
+  },
+  "strategy:p1_visible_points:bucket_b": {
+    "count": 1335,
+    "mean_iou": 0.5516245036629214,
+    "median_iou": 0.76110689,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 430,
+    "failure_rate_below_0.20": 0.32209737827715357,
+    "success_rates": {
+      "iou_at_least_0.50": 0.6142322097378277,
+      "iou_at_least_0.70": 0.5385767790262173,
+      "iou_at_least_0.80": 0.4599250936329588,
+      "iou_at_least_0.90": 0.19176029962546817
+    }
+  },
+  "strategy:p1_visible_points:bucket_c": {
+    "count": 12,
+    "mean_iou": 0.4512156041666667,
+    "median_iou": 0.491299455,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 5,
+    "failure_rate_below_0.20": 0.4166666666666667,
+    "success_rates": {
+      "iou_at_least_0.50": 0.5,
+      "iou_at_least_0.70": 0.4166666666666667,
+      "iou_at_least_0.80": 0.3333333333333333,
+      "iou_at_least_0.90": 0.08333333333333333
+    }
+  },
+  "strategy:p1_visible_points:overall": {
+    "count": 10525,
+    "mean_iou": 0.6266107416627079,
+    "median_iou": 0.84177117,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 2791,
+    "failure_rate_below_0.20": 0.26517814726840855,
+    "success_rates": {
+      "iou_at_least_0.50": 0.6933016627078384,
+      "iou_at_least_0.70": 0.6420902612826603,
+      "iou_at_least_0.80": 0.5687410926365796,
+      "iou_at_least_0.90": 0.2920665083135392
+    }
+  },
+  "strategy:p2_visible_skeleton:bucket_a": {
+    "count": 9178,
+    "mean_iou": 0.7004321665504467,
+    "median_iou": 0.849094545,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 1313,
+    "failure_rate_below_0.20": 0.14305949008498584,
+    "success_rates": {
+      "iou_at_least_0.50": 0.7880801917629113,
+      "iou_at_least_0.70": 0.7124645892351275,
+      "iou_at_least_0.80": 0.6078666376116801,
+      "iou_at_least_0.90": 0.2794726519938985
+    }
+  },
+  "strategy:p2_visible_skeleton:bucket_b": {
+    "count": 1335,
+    "mean_iou": 0.5850515629588016,
+    "median_iou": 0.78650539,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 352,
+    "failure_rate_below_0.20": 0.2636704119850187,
+    "success_rates": {
+      "iou_at_least_0.50": 0.6561797752808989,
+      "iou_at_least_0.70": 0.5700374531835206,
+      "iou_at_least_0.80": 0.48164794007490636,
+      "iou_at_least_0.90": 0.18876404494382024
+    }
+  },
+  "strategy:p2_visible_skeleton:bucket_c": {
+    "count": 12,
+    "mean_iou": 0.470595295,
+    "median_iou": 0.480863105,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 4,
+    "failure_rate_below_0.20": 0.3333333333333333,
+    "success_rates": {
+      "iou_at_least_0.50": 0.5,
+      "iou_at_least_0.70": 0.3333333333333333,
+      "iou_at_least_0.80": 0.3333333333333333,
+      "iou_at_least_0.90": 0.08333333333333333
+    }
+  },
+  "strategy:p2_visible_skeleton:overall": {
+    "count": 10525,
+    "mean_iou": 0.6855351453387173,
+    "median_iou": 0.84339251,
+    "failure_threshold": 0.2,
+    "failure_count_below_0.20": 1669,
+    "failure_rate_below_0.20": 0.15857482185273158,
+    "success_rates": {
+      "iou_at_least_0.50": 0.771021377672209,
+      "iou_at_least_0.70": 0.6939667458432304,
+      "iou_at_least_0.80": 0.5915439429928742,
+      "iou_at_least_0.90": 0.2677434679334917
+    }
+  }
+}

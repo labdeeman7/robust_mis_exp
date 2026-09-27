@@ -95,3 +95,14 @@ This is a living record of dataset facts, decisions, surprises, and implementati
 - The mutually exclusive full set contains 7,348 frames and 10,525 matched instruments: A has 6,595/9,178 frames/instances, B has 747/1,335, and C has 6/12.
 - Correspondence sources are 10,344 high-confidence C2 geometric assignments, 169 assignments recomputed using 20-pixel dilated-skeleton coverage, and 12 manually reviewed C assignments.
 - P1 and P2 produce 21,050 evaluations. One instrument has no visible in-bounds point under either policy; it is retained as an explicit no-valid-prompt failure with an empty prediction and IoU 0 rather than being excluded or assigned an invented prompt.
+
+## 2026-09-27 — Full P1/P2 results
+
+- The full Run:ai job completed successfully on an A100: 7,348 frames, 10,525 instruments, and 21,050 evaluated prompts, with one prediction retained for every evaluation.
+- P1 overall: mean IoU 0.6266, median 0.8418, 2,791/10,525 (26.5%) below IoU 0.20, 64.2% at IoU >= 0.70, and 56.9% at IoU >= 0.80.
+- P2 overall: mean IoU 0.6855, median 0.8434, 1,669/10,525 (15.9%) below IoU 0.20, 69.4% at IoU >= 0.70, and 59.2% at IoU >= 0.80.
+- P2 reduced catastrophic failures by 1,122 instances relative to P1 and is the stronger general policy.
+- P1 retained a slightly higher IoU >= 0.90 rate (29.2% versus 26.8%), showing that densification mainly prevents severe failures rather than improving the best masks.
+- Bucket A remains substantially easier: P2 mean IoU 0.7004 and 14.3% failures. Bucket B remains difficult: P2 mean 0.5851 and 26.4% failures. Bucket C is too small for a stable ranking and remains unreliable: P2 mean 0.4706 with 4/12 failures; P1 has one more instance at IoU >= 0.70.
+- Candidate selection is still a major opportunity: P2 deployable mean IoU is 0.6855 versus an oracle best-of-three mean of 0.8077.
+- The full result reinforces the central conclusion: visible pose is useful and dense visible skeleton prompting materially improves reliability, but zero-shot SAM 1 is not dependable enough to make pose-to-instance-mask conversion trivial.

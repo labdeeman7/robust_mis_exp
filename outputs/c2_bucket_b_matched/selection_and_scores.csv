@@ -1,0 +1,21 @@
+sample,bucket,frame_key,pose_count,mask_count,has_off_image_keypoint,assignment_by_pose_index,coverage_scores,image
+1,B,Stage_3/Sigmoid/7/76500,1,1,True,[50],"[{""50"": 1.0}]",01_Stage_3_1poses.png
+2,B,Stage_3/Sigmoid/9/13500,2,2,True,"[50, 100]","[{""50"": 1.0, ""100"": 0.0}, {""50"": 0.0, ""100"": 1.0}]",02_Stage_3_2poses.png
+3,B,Stage_3/Sigmoid/9/239221,2,2,True,"[100, 50]","[{""50"": 0.0, ""100"": 1.0}, {""50"": 0.8634204275534442, ""100"": 0.0}]",03_Stage_3_2poses.png
+4,B,Stage_2/Rectal resection/4/103579,1,1,True,[50],"[{""50"": 1.0}]",04_Stage_2_1poses.png
+5,B,Training/Proctocolectomy/4/117123,2,2,True,"[50, 100]","[{""50"": 1.0, ""100"": 0.0}, {""50"": 0.0, ""100"": 1.0}]",05_Training_2poses.png
+6,B,Stage_3/Sigmoid/10/90276,1,1,True,[50],"[{""50"": 1.0}]",06_Stage_3_1poses.png
+7,B,Stage_1/Proctocolectomy/10/80137,1,1,True,[50],"[{""50"": 1.0}]",07_Stage_1_1poses.png
+8,B,Training/Rectal resection/3/82500,1,1,True,[50],"[{""50"": 1.0}]",08_Training_1poses.png
+9,B,Stage_3/Sigmoid/3/46773,2,2,True,"[100, 50]","[{""50"": 0.0, ""100"": 1.0}, {""50"": 1.0, ""100"": 0.0}]",09_Stage_3_2poses.png
+10,B,Training/Rectal resection/2/281923,1,1,True,[50],"[{""50"": 1.0}]",10_Training_1poses.png
+11,B,Training/Rectal resection/9/122353,1,1,True,[50],"[{""50"": 1.0}]",11_Training_1poses.png
+12,B,Stage_3/Sigmoid/10/168229,1,1,True,[50],"[{""50"": 1.0}]",12_Stage_3_1poses.png
+13,B,Training/Rectal resection/1/34500,2,2,True,"[50, 100]","[{""50"": 1.0, ""100"": 0.11027568922305764}, {""50"": 0.07075471698113207, ""100"": 1.0}]",13_Training_2poses.png
+14,B,Training/Rectal resection/9/301500,2,2,True,"[50, 100]","[{""50"": 1.0, ""100"": 0.0}, {""50"": 0.0, ""100"": 1.0}]",14_Training_2poses.png
+15,B,Stage_3/Sigmoid/3/84652,2,2,True,"[100, 50]","[{""50"": 0.0, ""100"": 1.0}, {""50"": 1.0, ""100"": 0.0}]",15_Stage_3_2poses.png
+16,B,Training/Rectal resection/10/35407,1,1,True,[50],"[{""50"": 1.0}]",16_Training_1poses.png
+17,B,Stage_3/Sigmoid/9/267745,3,3,True,"[50, 150, 100]","[{""50"": 1.0, ""100"": 0.0, ""150"": 0.0}, {""50"": 0.0, ""100"": 0.0, ""150"": 1.0}, {""50"": 0.0, ""100"": 1.0, ""150"": 0.0}]",17_Stage_3_3poses.png
+18,B,Stage_3/Sigmoid/3/95152,2,2,True,"[50, 100]","[{""50"": 1.0, ""100"": 0.0}, {""50"": 0.0, ""100"": 1.0}]",18_Stage_3_2poses.png
+19,B,Training/Proctocolectomy/10/63334,2,2,True,"[50, 100]","[{""50"": 0.8389057750759878, ""100"": 0.0}, {""50"": 0.0, ""100"": 1.0}]",19_Training_2poses.png
+20,B,Training/Rectal resection/9/16500,1,1,True,[50],"[{""50"": 1.0}]",20_Training_1poses.png

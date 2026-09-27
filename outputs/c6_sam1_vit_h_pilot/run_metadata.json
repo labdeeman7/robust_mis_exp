@@ -1,0 +1,11 @@
+{
+  "model": "segment_anything",
+  "model_type": "vit_h",
+  "checkpoint": "checkpoints/sam_vit_h_4b8939.pth",
+  "device": "cuda",
+  "frame_count": 200,
+  "result_count": 2226,
+  "torch_version": "2.6.0+cu126",
+  "cuda_version": "12.6",
+  "gpu": "NVIDIA A100-SXM4-40GB"
+}

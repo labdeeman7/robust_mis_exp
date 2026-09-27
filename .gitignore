@@ -6,7 +6,8 @@
 !/data/manifests/c2/bucket_c_manual_resolved.csv
 
 # Generated outputs and caches
-/outputs/
+# Keep summaries, plots, galleries, and review images; raw prediction masks are reproducible and bulky.
+/outputs/**/predictions/
 /checkpoints/
 /.deps/
 __pycache__/

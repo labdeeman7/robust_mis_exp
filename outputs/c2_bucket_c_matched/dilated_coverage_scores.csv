@@ -1,0 +1,13 @@
+case_id,frame_key,pose_index,coverage_mask_50,coverage_mask_100,automatic_mask_label,manual_mask_label,automatic_matches_manual
+1,Stage_2/Proctocolectomy/6/190500,0,0.014423,1.000000,100,100,True
+1,Stage_2/Proctocolectomy/6/190500,1,0.662879,0.617424,50,50,True
+2,Stage_3/Sigmoid/2/130935,0,1.000000,0.000000,50,50,True
+2,Stage_3/Sigmoid/2/130935,1,1.000000,0.777778,100,100,True
+3,Training/Proctocolectomy/10/119762,0,0.111888,1.000000,100,100,True
+3,Training/Proctocolectomy/10/119762,1,1.000000,0.089796,50,50,True
+4,Training/Proctocolectomy/10/82147,0,1.000000,0.000000,50,50,True
+4,Training/Proctocolectomy/10/82147,1,0.312500,0.835227,100,100,True
+5,Training/Proctocolectomy/4/51123,0,0.000000,1.000000,100,100,True
+5,Training/Proctocolectomy/4/51123,1,1.000000,0.608247,50,50,True
+6,Training/Proctocolectomy/9/68741,0,1.000000,0.120482,50,50,True
+6,Training/Proctocolectomy/9/68741,1,0.069048,0.885714,100,100,True

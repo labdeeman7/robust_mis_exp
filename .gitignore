@@ -1,0 +1,20 @@
+# Dataset payloads
+/data/archives/
+/data/raw/
+/data/manifests/**/*.csv
+/data/manifests/**/*.jsonl
+!/data/manifests/c2/bucket_c_manual_resolved.csv
+
+# Generated outputs and caches
+/outputs/
+/checkpoints/
+/.deps/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+.vendor/
+.env
+.secrets/
+*.pdf

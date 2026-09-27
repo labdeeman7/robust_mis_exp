@@ -1,0 +1,20 @@
+{
+  "frame_count": 7348,
+  "instance_count": 10525,
+  "bucket_frames": {
+    "A": 6595,
+    "B": 747,
+    "C": 6
+  },
+  "bucket_instances": {
+    "A": 9178,
+    "B": 1335,
+    "C": 12
+  },
+  "match_sources": {
+    "c2_geometric": 10344,
+    "dilated_skeleton_20px": 169,
+    "manual_review": 12
+  },
+  "recomputed_frame_count": 92
+}

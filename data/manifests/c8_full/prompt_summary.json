@@ -1,0 +1,16 @@
+{
+  "frame_count": 7348,
+  "instance_count": 10525,
+  "strategy_count": 2,
+  "prompt_count": 21050,
+  "strategies": [
+    "p1_visible_points",
+    "p2_visible_skeleton"
+  ],
+  "counts": {
+    "p1_visible_points": 10525,
+    "p1_visible_points_no_positive": 1,
+    "p2_visible_skeleton": 10525,
+    "p2_visible_skeleton_no_positive": 1
+  }
+}

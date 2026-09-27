@@ -1,0 +1,13 @@
+case_id,frame_key,pose_index,final_mask_label,resolution_source,automatic_mask_label,buffered_skeleton_iou,all_ious,image
+1,Stage_2/Proctocolectomy/6/190500,0,100,manual_colour_review,100,0.132442,"{""50"": 0.0, ""100"": 0.1324421799862606}",01_Stage_2_2poses.png
+1,Stage_2/Proctocolectomy/6/190500,1,50,manual_colour_review,50,0.085119,"{""50"": 0.08511873350923482, ""100"": 0.048930752169984396}",01_Stage_2_2poses.png
+2,Stage_3/Sigmoid/2/130935,0,50,manual_colour_review,50,0.238952,"{""50"": 0.2389523479866159, ""100"": 0.0}",02_Stage_3_2poses.png
+2,Stage_3/Sigmoid/2/130935,1,100,manual_colour_review,100,0.109244,"{""50"": 0.04320608813060022, ""100"": 0.1092436974789916}",02_Stage_3_2poses.png
+3,Training/Proctocolectomy/10/119762,0,100,manual_colour_review,100,0.179054,"{""50"": 0.0, ""100"": 0.179053631703963}",03_Training_2poses.png
+3,Training/Proctocolectomy/10/119762,1,50,manual_colour_review,50,0.197983,"{""50"": 0.19798279023839752, ""100"": 0.0014454277286135692}",03_Training_2poses.png
+4,Training/Proctocolectomy/10/82147,0,50,manual_colour_review,50,0.142644,"{""50"": 0.14264428330187742, ""100"": 0.0}",04_Training_2poses.png
+4,Training/Proctocolectomy/10/82147,1,100,manual_colour_review,100,0.360816,"{""50"": 0.0035521764870844108, ""100"": 0.3608158575122091}",04_Training_2poses.png
+5,Training/Proctocolectomy/4/51123,0,100,manual_colour_review,100,0.201558,"{""50"": 0.0, ""100"": 0.20155793573515093}",05_Training_2poses.png
+5,Training/Proctocolectomy/4/51123,1,50,manual_colour_review,50,0.318610,"{""50"": 0.3186099382916531, ""100"": 0.006540578841227449}",05_Training_2poses.png
+6,Training/Proctocolectomy/9/68741,0,50,manual_colour_review,50,0.137191,"{""50"": 0.13719059889123136, ""100"": 0.0009961369323841687}",06_Training_2poses.png
+6,Training/Proctocolectomy/9/68741,1,100,manual_colour_review,100,0.085442,"{""50"": 0.00011600255205614524, ""100"": 0.0854421768707483}",06_Training_2poses.png

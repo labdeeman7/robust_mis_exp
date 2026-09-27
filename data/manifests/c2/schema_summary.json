@@ -1,0 +1,62 @@
+{
+  "anomaly_count": 4045,
+  "anomaly_counts": {
+    "ambiguous_pose_mask_mapping": 290,
+    "pose_mask_count_mismatch": 645,
+    "pose_order_not_best_geometric_match": 3027,
+    "unexpected_mask_labels": 83
+  },
+  "direct_order_support_rate": 0.7296597302848977,
+  "direct_order_supported_instances": 8170,
+  "direct_order_testable_instances": 11197,
+  "frame_count": 10040,
+  "geometrically_matched_pose_count": 11286,
+  "instrument_count": 11560,
+  "mask_instance_count": 11918,
+  "mask_label_occurrences": {
+    "100": 3346,
+    "150": 630,
+    "200": 99,
+    "250": 10,
+    "44": 1,
+    "50": 7831,
+    "94": 1
+  },
+  "missing_by_keypoint": {
+    "tip1": 2527,
+    "tip2": 7672
+  },
+  "missing_keypoint_frame_count": 5969,
+  "off_image_by_keypoint": {
+    "entry": 848,
+    "hinge": 820,
+    "tip1": 4,
+    "tip2": 1
+  },
+  "off_image_frame_count": 826,
+  "off_image_instance_count": 850,
+  "pose_count_distribution": {
+    "0": 2074,
+    "1": 4804,
+    "2": 2748,
+    "3": 397,
+    "4": 16,
+    "5": 1
+  },
+  "pose_mask_count_match_frames": 9395,
+  "canonical_mask_label_set_match_frames": 9312,
+  "reliably_matched_pose_count": 11270,
+  "root": "data/raw/RobustMIPS",
+  "split_counts": {
+    "Stage_1": 663,
+    "Stage_2": 514,
+    "Stage_3": 2880,
+    "Training": 5983
+  },
+  "visibility_tag_counts": {
+    "missing": 10199,
+    "occluded": 3240,
+    "visible": 32801
+  },
+  "zero_pose_frame_count": 2074
+}

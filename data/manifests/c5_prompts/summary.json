@@ -1,0 +1,37 @@
+{
+  "instance_count": 318,
+  "strategy_count": 7,
+  "prompt_count": 2226,
+  "strategies": [
+    "p1_visible_points",
+    "p2_visible_skeleton",
+    "p3_visible_box",
+    "p4_visible_points_box",
+    "p5_visible_points_negatives",
+    "p6_visible_points_box_negatives",
+    "p7_shifted_entry_ablation"
+  ],
+  "counts": {
+    "p1_visible_points": 318,
+    "p1_visible_points_no_positive": 0,
+    "p1_visible_points_shifted": 0,
+    "p2_visible_skeleton": 318,
+    "p2_visible_skeleton_no_positive": 0,
+    "p2_visible_skeleton_shifted": 0,
+    "p3_visible_box": 318,
+    "p3_visible_box_no_positive": 318,
+    "p3_visible_box_shifted": 0,
+    "p4_visible_points_box": 318,
+    "p4_visible_points_box_no_positive": 0,
+    "p4_visible_points_box_shifted": 0,
+    "p5_visible_points_negatives": 318,
+    "p5_visible_points_negatives_no_positive": 0,
+    "p5_visible_points_negatives_shifted": 0,
+    "p6_visible_points_box_negatives": 318,
+    "p6_visible_points_box_negatives_no_positive": 0,
+    "p6_visible_points_box_negatives_shifted": 0,
+    "p7_shifted_entry_ablation": 318,
+    "p7_shifted_entry_ablation_no_positive": 0,
+    "p7_shifted_entry_ablation_shifted": 97
+  }
+}

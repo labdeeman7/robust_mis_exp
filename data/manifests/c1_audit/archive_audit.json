@@ -1,0 +1,57 @@
+{
+  "all_frames_are_complete_triplets": true,
+  "archive": "data/archives/RobustMIPS.zip",
+  "archive_sha256": "bb1e5a2ee4ad3cadd8bb1b3f5d4222703b30615c8456a908fd48056c7531f832",
+  "archive_size_bytes": 3533771766,
+  "basename_counts": {
+    ".DS_Store": 8,
+    "Thumbs.db": 2,
+    "instrument_instances.png": 10040,
+    "raw.png": 10040,
+    "toolposes.json": 10040
+  },
+  "complete_triplets": 10040,
+  "corrupt_members": [],
+  "detected_frame_directories": 10040,
+  "dimension_errors": [],
+  "duplicate_member_count": 0,
+  "duplicate_members": [],
+  "expected_frame_count": 10040,
+  "extension_counts": {
+    "": 8,
+    ".db": 2,
+    ".json": 10040,
+    ".png": 20080
+  },
+  "frame_count_matches_expectation": true,
+  "json_errors": [],
+  "mismatched_image_mask_dimensions": 0,
+  "pose_schema_examples": {
+    "RobustMIPS/Testing/Stage_1/Proctocolectomy/1/123000/toolposes.json": {
+      "inferred_instance_count": 2,
+      "top_level_type": "list"
+    },
+    "RobustMIPS/Testing/Stage_1/Proctocolectomy/1/141000/toolposes.json": {
+      "inferred_instance_count": 3,
+      "top_level_type": "list"
+    },
+    "RobustMIPS/Testing/Stage_1/Proctocolectomy/1/144000/toolposes.json": {
+      "inferred_instance_count": 0,
+      "top_level_type": "list"
+    },
+    "RobustMIPS/Testing/Stage_1/Proctocolectomy/1/156000/toolposes.json": {
+      "inferred_instance_count": 1,
+      "top_level_type": "list"
+    },
+    "RobustMIPS/Testing/Stage_1/Proctocolectomy/1/172500/toolposes.json": {
+      "inferred_instance_count": 3,
+      "top_level_type": "list"
+    }
+  },
+  "split_counts": {
+    "Stage_1": 663,
+    "Stage_2": 514,
+    "Stage_3": 2880,
+    "Training": 5983
+  }
+}

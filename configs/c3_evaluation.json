@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "unit": "instrument_instance",
+  "metric": "binary_mask_iou",
+  "thresholds": [0.5, 0.7, 0.8, 0.9],
+  "failure_threshold_strictly_below": 0.2,
+  "threshold_comparison": "greater_than_or_equal",
+  "empty_prediction_iou": 0.0,
+  "empty_reference_policy": "error",
+  "required_summaries": ["count", "mean_iou", "median_iou", "failure_count", "failure_rate", "success_rates"],
+  "required_strata": ["overall", "bucket_a", "bucket_b", "bucket_c"],
+  "retain_per_instance_results": true
+}

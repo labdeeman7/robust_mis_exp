@@ -1,0 +1,33 @@
+{
+  "seed": 20260927,
+  "frame_count": 200,
+  "instance_count": 318,
+  "bucket_frames": {
+    "C": 6,
+    "B": 94,
+    "A": 100
+  },
+  "bucket_instances": {
+    "C": 12,
+    "B": 151,
+    "A": 155
+  },
+  "single_vs_multi_frames": {
+    "C_multi": 6,
+    "B_single": 47,
+    "A_multi": 50,
+    "A_single": 50,
+    "B_multi": 47
+  },
+  "split_frames": {
+    "Training": 105,
+    "Stage_3": 63,
+    "Stage_1": 14,
+    "Stage_2": 18
+  },
+  "surgery_frames": {
+    "Proctocolectomy": 67,
+    "Sigmoid": 63,
+    "Rectal resection": 70
+  }
+}

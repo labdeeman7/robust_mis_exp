@@ -9,6 +9,8 @@ import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from build_c5_prompts import BUCKET_DESCRIPTIONS, BUCKET_ORDER, pose_bucket
+
 
 SEED = 20260927
 QUOTAS = {"A": (50, 50), "B": (47, 47)}  # (single-instrument, multi-instrument)
@@ -65,17 +67,21 @@ def main() -> int:
 
     frame_rows: list[dict[str, object]] = []
     instance_rows: list[dict[str, object]] = []
-    for pilot_index, (bucket, frame) in enumerate(selected):
+    for pilot_index, (selection_bucket, frame) in enumerate(selected):
         key = frame["frame_key"]
-        frame_rows.append({"pilot_index": pilot_index, "bucket": bucket, **frame})
-        if bucket == "C":
+        if selection_bucket == "C":
             matches = sorted(reviewed_by_frame[key], key=lambda row: int(row["pose_index"]))
             mappings = [(int(row["pose_index"]), int(row["final_mask_label"]), "manual_review") for row in matches]
         else:
             matches = sorted(easy_by_frame[key], key=lambda row: int(row["instance_index"]))
             mappings = [(int(row["instance_index"]), int(row["matched_mask_label"]), "c2_geometric")
                         for row in matches]
-        for pose_index, mask_label, source in mappings:
+        poses = json.loads(Path(frame["pose_path"]).read_text())
+        buckets = [pose_bucket(poses[pose_index], int(frame["width"]), int(frame["height"]),
+                               selection_bucket == "C") for pose_index, _, _ in mappings]
+        frame_bucket = max(buckets, key=BUCKET_ORDER.index)
+        frame_rows.append({"pilot_index": pilot_index, "bucket": frame_bucket, **frame})
+        for (pose_index, mask_label, source), bucket in zip(mappings, buckets):
             instance_rows.append({"pilot_index": pilot_index, "bucket": bucket, "frame_key": key,
                                   "pose_index": pose_index, "mask_label": mask_label,
                                   "match_source": source, "image_path": frame["image_path"],
@@ -93,6 +99,7 @@ def main() -> int:
         "seed": SEED,
         "frame_count": len(frame_rows),
         "instance_count": len(instance_rows),
+        "bucket_definitions": BUCKET_DESCRIPTIONS,
         "bucket_frames": Counter(row["bucket"] for row in frame_rows),
         "bucket_instances": Counter(row["bucket"] for row in instance_rows),
         "single_vs_multi_frames": Counter(

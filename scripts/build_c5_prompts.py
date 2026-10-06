@@ -24,9 +24,30 @@ STRATEGIES = (
     "p7_shifted_entry_ablation",
 )
 
+BUCKET_ORDER = ("A", "B", "C", "D")
+BUCKET_DESCRIPTIONS = {
+    "A": "complete: all keypoints visible and in bounds",
+    "B": "partial in-frame: at least one occluded or missing keypoint, none off-screen",
+    "C": "off-screen: at least one keypoint coordinate outside the image",
+    "D": "correspondence-hard: pose-to-mask assignment required explicit review",
+}
+
 
 def is_in_bounds(point: list[float], width: int, height: int) -> bool:
     return valid_node(point) and 0 <= point[0] < width and 0 <= point[1] < height
+
+
+def pose_bucket(pose: dict[str, Any], width: int, height: int, correspondence_hard: bool = False) -> str:
+    """Assign the mutually exclusive reporting stratum for one instrument pose."""
+    if correspondence_hard:
+        return "D"
+    nodes = pose.get("nodes", [])
+    if any(valid_node(point) and not is_in_bounds(point, width, height) for point in nodes):
+        return "C"
+    tags = pose.get("tags", [])
+    if len(tags) != len(nodes) or any(tag != "visible" for tag in tags):
+        return "B"
+    return "A"
 
 
 def visible_points(pose: dict[str, Any], width: int, height: int) -> list[list[float]]:

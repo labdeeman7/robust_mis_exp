@@ -2,22 +2,32 @@
   "seed": 20260927,
   "frame_count": 200,
   "instance_count": 318,
+  "bucket_definitions": {
+    "A": "complete: all keypoints visible and in bounds",
+    "B": "partial in-frame: at least one occluded or missing keypoint, none off-screen",
+    "C": "off-screen: at least one keypoint coordinate outside the image",
+    "D": "correspondence-hard: pose-to-mask assignment required explicit review"
+  },
   "bucket_frames": {
-    "C": 6,
-    "B": 94,
-    "A": 100
+    "D": 6,
+    "C": 94,
+    "B": 82,
+    "A": 18
   },
   "bucket_instances": {
-    "C": 12,
-    "B": 151,
-    "A": 155
+    "D": 12,
+    "C": 95,
+    "A": 60,
+    "B": 151
   },
   "single_vs_multi_frames": {
-    "C_multi": 6,
-    "B_single": 47,
-    "A_multi": 50,
-    "A_single": 50,
-    "B_multi": 47
+    "D_multi": 6,
+    "C_single": 47,
+    "B_multi": 46,
+    "A_single": 14,
+    "C_multi": 47,
+    "B_single": 36,
+    "A_multi": 4
   },
   "split_frames": {
     "Training": 105,

@@ -18,6 +18,7 @@ ORDER = [
 ]
 SHORT = {strategy: strategy.split("_", 1)[0].upper() for strategy in ORDER}
 COLORS = ["#00bcd4", "#ff3d71", "#7cb342", "#ffc107", "#8e67cc", "#ff8c42", "#00a878"]
+BUCKETS = "ABCD"
 
 
 def quantile(values: list[float], probability: float) -> float:
@@ -92,7 +93,7 @@ def main() -> int:
     with args.results.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
     overall: dict[str, list[float]] = defaultdict(list)
-    buckets: dict[str, dict[str, list[float]]] = {bucket: defaultdict(list) for bucket in "ABC"}
+    buckets: dict[str, dict[str, list[float]]] = {bucket: defaultdict(list) for bucket in BUCKETS}
     for row in rows:
         value = float(row["iou"])
         overall[row["strategy"]].append(value)
@@ -101,7 +102,7 @@ def main() -> int:
     destination.mkdir(parents=True, exist_ok=True)
     write_plot(destination / "iou_violin_box_overall.svg", [(overall, "All pilot instances")], panel_width=900)
     write_plot(destination / "iou_violin_box_by_bucket.svg",
-               [(buckets[bucket], f"Bucket {bucket}") for bucket in "ABC"], panel_width=720)
+               [(buckets[bucket], f"Bucket {bucket}") for bucket in BUCKETS], panel_width=620)
     print(f"Wrote plots to {destination}")
     return 0
 

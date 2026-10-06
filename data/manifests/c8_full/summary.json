@@ -1,15 +1,23 @@
 {
   "frame_count": 7348,
   "instance_count": 10525,
+  "bucket_definitions": {
+    "A": "complete: all keypoints visible and in bounds",
+    "B": "partial in-frame: at least one occluded or missing keypoint, none off-screen",
+    "C": "off-screen: at least one keypoint coordinate outside the image",
+    "D": "correspondence-hard: pose-to-mask assignment required explicit review"
+  },
   "bucket_frames": {
-    "A": 6595,
-    "B": 747,
-    "C": 6
+    "B": 5074,
+    "A": 1521,
+    "C": 747,
+    "D": 6
   },
   "bucket_instances": {
-    "A": 9178,
-    "B": 1335,
-    "C": 12
+    "B": 6801,
+    "A": 2946,
+    "C": 766,
+    "D": 12
   },
   "match_sources": {
     "c2_geometric": 10344,

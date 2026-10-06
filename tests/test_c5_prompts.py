@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from build_c5_prompts import make_prompt, shifted_entry, visible_points  # noqa: E402
+from build_c5_prompts import make_prompt, pose_bucket, shifted_entry, visible_points  # noqa: E402
 
 
 class C5PromptTest(unittest.TestCase):
@@ -16,6 +16,15 @@ class C5PromptTest(unittest.TestCase):
 
     def test_only_visible_and_in_bounds_points_survive(self) -> None:
         self.assertEqual(visible_points(self.pose, 100, 80), [[50.0, 30.0]])
+
+    def test_reporting_buckets_are_mutually_exclusive(self) -> None:
+        complete = {"nodes": [[1, 1], [2, 2]], "tags": ["visible", "visible"]}
+        partial = {"nodes": [[1, 1], None], "tags": ["visible", "missing"]}
+        offscreen = {"nodes": [[-1, 1], [2, 2]], "tags": ["occluded", "visible"]}
+        self.assertEqual(pose_bucket(complete, 10, 10), "A")
+        self.assertEqual(pose_bucket(partial, 10, 10), "B")
+        self.assertEqual(pose_bucket(offscreen, 10, 10), "C")
+        self.assertEqual(pose_bucket(complete, 10, 10, correspondence_hard=True), "D")
 
     def test_occluded_points_never_enter_primary_prompt(self) -> None:
         prompt = make_prompt("p1_visible_points", self.pose, [], 100, 80)

@@ -39,6 +39,7 @@ This is a living record of dataset facts, decisions, surprises, and implementati
 - Report mean and median IoU plus the percentage of instances reaching IoU thresholds 0.50, 0.70, 0.80, and 0.90.
 - An IoU threshold in the 0.70--0.80 range is expected to represent a useful result, but stakeholders will choose the default appropriate to their application.
 - Report results overall and separately for Buckets A, B, and C so off-frame and difficult correspondence cases cannot be hidden by the aggregate.
+- The original A/B/C split was too coarse: old A only meant no off-image coordinate, so it still contained many occluded or missing keypoints. On 2026-10-06 we replaced it with per-instrument A/B/C/D strata: A complete and visible; B partial but in-frame; C off-screen; D correspondence-hard. The full evaluation contains 2,946/6,801/766/12 instances respectively. This is a reporting-only correction; retained SAM predictions and IoUs were not recomputed.
 
 ## Open questions
 

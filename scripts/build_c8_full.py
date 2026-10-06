@@ -10,6 +10,7 @@ from pathlib import Path
 
 from build_c2_manifests import read_grayscale_png
 from render_bucket_c_matches import best_assignment, centreline_pixels, coverage
+from build_c5_prompts import BUCKET_DESCRIPTIONS, BUCKET_ORDER, pose_bucket
 
 
 def truth(value: str) -> bool:
@@ -41,12 +42,11 @@ def main() -> int:
         if pose_count == 0 or not truth(frame["counts_match"]):
             continue
         key = frame["frame_key"]
-        if key in c_keys:
-            bucket = "C"
+        correspondence_hard = key in c_keys
+        if correspondence_hard:
             mappings = [(int(row["pose_index"]), int(row["final_mask_label"]), "manual_review")
                         for row in sorted(reviewed_by_frame[key], key=lambda row: int(row["pose_index"]))]
         else:
-            bucket = "B" if truth(frame["has_off_image_keypoint"]) else "A"
             easy_rows = sorted(easy_by_frame.get(key, []), key=lambda row: int(row["instance_index"]))
             if len(easy_rows) == pose_count:
                 mappings = [(int(row["instance_index"]), int(row["matched_mask_label"]), "c2_geometric")
@@ -63,8 +63,12 @@ def main() -> int:
         if len(mappings) != pose_count or any(label is None for _, label, _ in mappings):
             raise RuntimeError(f"incomplete mapping for {key}: {mappings}")
         evaluation_frame_index = len(frame_rows)
-        frame_rows.append({"evaluation_frame_index": evaluation_frame_index, "bucket": bucket, **frame})
-        for pose_index, mask_label, source in mappings:
+        poses = json.loads(Path(frame["pose_path"]).read_text())
+        instance_buckets = [pose_bucket(poses[pose_index], int(frame["width"]), int(frame["height"]),
+                                        correspondence_hard) for pose_index, _, _ in mappings]
+        frame_bucket = max(instance_buckets, key=BUCKET_ORDER.index)
+        frame_rows.append({"evaluation_frame_index": evaluation_frame_index, "bucket": frame_bucket, **frame})
+        for (pose_index, mask_label, source), bucket in zip(mappings, instance_buckets):
             instance_rows.append({"evaluation_instance_index": len(instance_rows),
                                   "evaluation_frame_index": evaluation_frame_index, "bucket": bucket,
                                   "frame_key": key, "pose_index": pose_index, "mask_label": mask_label,
@@ -79,6 +83,7 @@ def main() -> int:
             writer.writeheader()
             writer.writerows(rows)
     summary = {"frame_count": len(frame_rows), "instance_count": len(instance_rows),
+               "bucket_definitions": BUCKET_DESCRIPTIONS,
                "bucket_frames": Counter(row["bucket"] for row in frame_rows),
                "bucket_instances": Counter(row["bucket"] for row in instance_rows),
                "match_sources": Counter(row["match_source"] for row in instance_rows),
